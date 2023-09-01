@@ -1,0 +1,15 @@
+#!/usr/bin/expect
+
+set timeout 1
+spawn ./implement.sh
+expect "  Enter conversion option character <stop program>: "
+send -- "D\r"
+expect " Please enter input binary hydra/quanta plot (old) filename
+ defaults <dotsurface.qpt> ext:<.qpt> (abort by EXIT or ^D) :"
+send -- "\r"
+expect " Please enter vmd format file (new) filename
+ defaults <dotsurface.vmd_plot> ext:<.vmd_plot> (abort by EXIT or ^D) :"
+send -- "\r"
+expect " What width do you want lines to appear <1>:"
+send -- "\r"
+expect eof
